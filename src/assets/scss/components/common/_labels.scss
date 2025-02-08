@@ -1,0 +1,62 @@
+.card {
+  width: 300px;
+  border: 1px solid var(--darkGreyColor);
+  padding: 30px;
+}
+
+.lables-text {
+  font-size: 25px;
+  color: var(--darkGreyColor);
+  font-weight: 600;
+  &.xlg {
+    font-size: 32px;
+  }
+  &.lg {
+    font-size: 18px;
+  }
+  &.sm {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  &.title {
+    font-weight: bold;
+    font-size: 55px;
+  }
+}
+
+.print-status {
+  padding: 0 10px;
+  border-radius: 7px;
+  margin-top: 5px;
+  font-size: 14px;
+  width: fit-content;
+  text-align: center;
+
+  &.printed {
+    background: var(--successColor);
+    color: #ffffff;
+    border: 1px solid var(--successColor);
+  }
+  &.not-printed {
+    background: #ffffff;
+    color: var(--darkGreyColor);
+    border: 1px solid var(--darkGreyColor);
+  }
+}
+
+.checked-status {
+  &.complete {
+    background-color: var(--successColor);
+  }
+  &.not-complete {
+    background-color: var(--dangerColor);
+  }
+}
+
+.height-500 {
+  height: 500px;
+}
+
+.width-100 {
+  width: 100px;
+}

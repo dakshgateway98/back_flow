@@ -1,0 +1,16 @@
+.modal-overview {
+  .modal-content {
+    min-height: 90vh;
+  }
+}
+
+.modal-table {
+  flex-grow: 1;
+  overflow: scroll;
+  &.fullOrder {
+    max-height: calc(100vh - 400px);
+  }
+  &.fullfill {
+    max-height: calc(100vh - 430px);
+  }
+}

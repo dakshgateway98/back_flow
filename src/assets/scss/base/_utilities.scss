@@ -1,0 +1,41 @@
+.cursor {
+  &-pointer input {
+    cursor: pointer;
+  }
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.cursorNotAllowed {
+  label {
+    cursor: not-allowed !important;
+  }
+}
+
+.height-20 {
+  height: 20px;
+}
+.badge {
+  &-success {
+    background: #169a36;
+  }
+  &-outline {
+    &-secondary {
+      border: 1px solid #707070;
+      color: #707070;
+    }
+  }
+}
+.fw {
+  &-600 {
+    font-weight: 600;
+  }
+}
+
+.container {
+  @media (max-width: $bakeflow-tablet-max-width) {
+    max-width: 1220px !important;
+  }
+}

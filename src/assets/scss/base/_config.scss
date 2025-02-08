@@ -1,0 +1,79 @@
+// Default config values. Do NOT modify this file.
+
+$rem-baseline-px: 16px !default;
+$rem-include-px: true !default;
+
+// ====== Features ======
+
+$build-tablet-classes: true !default;
+$build-phone-tablet-classes: true !default;
+$build-phone-classes: true !default;
+
+// ====== Prefixes ======
+
+$prefix: "" !default;
+$prefix-tablet: "tab-" !default;
+$prefix-phone-tablet: "phn-tab-" !default;
+$prefix-phone: "phn-" !default;
+
+// ====== !important ======
+
+$use-important: true !default;
+$paddings-use-important: $use-important !default;
+$margins-use-important: $use-important !default;
+
+// ====== Media Devices ======
+
+$desktop-max-width: 1025px !default;
+$desktop-min-width: 980px !default;
+$tablet-min-width: 768px !default;
+$tablet-max-width: 979px !default;
+$phone-max-width: 767px !default;
+$bakeflow-tablet-max-width: 1280px !default;
+
+// ====== Paddings ======
+
+$paddings: (0 5 10 15 20 25 30 50 60 70 80 100 120) !default;
+$paddings-vertical: $paddings !default;
+$paddings-horizontal: $paddings !default;
+
+$tablet-paddings: $paddings !default;
+$tablet-paddings-vertical: $paddings-vertical !default;
+$tablet-paddings-horizontal: $paddings-horizontal !default;
+
+$phone-tablet-paddings: $paddings !default;
+$phone-tablet-paddings-vertical: $paddings-vertical !default;
+$phone-tablet-paddings-horizontal: $paddings-horizontal !default;
+
+$phone-paddings: $paddings !default;
+$phone-paddings-vertical: $paddings-vertical !default;
+$phone-paddings-horizontal: $paddings-horizontal !default;
+
+// ====== Margins ======
+
+$margins: (0 5 10 15 20 25 30 50 60 70 80 100 120) !default;
+$margins-vertical: $margins !default;
+$margins-horizontal: $margins !default;
+
+$tablet-margins: $margins !default;
+$tablet-margins-vertical: $margins-vertical !default;
+$tablet-margins-horizontal: $margins-horizontal !default;
+
+$phone-tablet-margins: $margins !default;
+$phone-tablet-margins-vertical: $margins-vertical !default;
+$phone-tablet-margins-horizontal: $margins-horizontal !default;
+
+$phone-margins: $margins !default;
+$phone-margins-vertical: $margins-vertical !default;
+$phone-margins-horizontal: $margins-horizontal !default;
+
+// ====== Setting default variable values based on config. Do not edit unless you know what you are doing! ======
+
+$val-important: if($use-important, " !important", "");
+$val-important-paddings: if($paddings-use-important, " !important", "");
+$val-important-margins: if($margins-use-important, " !important", "");
+
+$val-prefix: $prefix;
+$val-prefix-tablet: $val-prefix + $prefix-tablet;
+$val-prefix-phone-tablet: $val-prefix + $prefix-phone-tablet;
+$val-prefix-phone: $val-prefix + $prefix-phone;

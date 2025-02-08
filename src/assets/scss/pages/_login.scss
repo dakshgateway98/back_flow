@@ -1,0 +1,7 @@
+.login {
+  min-height: 100vh;
+  @media (max-width: $bakeflow-tablet-max-width) {
+    min-height: 100vh;
+    margin-bottom: 350px;
+  }
+}

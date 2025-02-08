@@ -1,0 +1,57 @@
+.fc-view-container {
+  overflow-x: scroll !important;
+}
+.fc-view.fc-agendaDay-view.fc-agenda-view {
+  width: 500% !important;
+}
+/* **For 2 day view** */
+.fc-view.fc-agendaTwoDay-view.fc-agenda-view {
+  width: 500% !important;
+}
+.fc-daygrid-day-number,
+.fc-col-header-cell-cushion {
+  color: var(--primaryColor) !important;
+  text-decoration: none !important;
+  a {
+    text-decoration: none !important;
+  }
+}
+.fc-toolbar-chunk {
+  button {
+    background-color: var(--primaryColor) !important;
+    border: none !important;
+  }
+  .fc-toolbar-title {
+    color: var(--primaryTextColor) !important;
+  }
+}
+.fc-theme-standard {
+  td {
+    border: 1px solid var(--primaryColor) !important;
+    cursor: pointer;
+    z-index: 10 !important;
+  }
+}
+.fc-highlight {
+  background-color: rgba(205, 175, 222, 0.332) !important;
+  color: white !important;
+  z-index: 1 !important;
+}
+.fc-daygrid-day.fc-day-today {
+  background-color: #ffffff;
+}
+.custom-calender {
+  table.fc-scrollgrid.fc-scrollgrid-liquid {
+    table-layout: fixed !important;
+    min-width: 600px !important;
+    border: none !important;
+    tr {
+      th {
+        border: none !important;
+      }
+    }
+  }
+  .fc-dayGridMonth-view {
+    overflow: auto;
+  }
+}

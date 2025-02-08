@@ -1,0 +1,329 @@
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $rem-baseline-px / 1rem * 1;
+
+  // Print the first line in pixel values
+  @if $rem-include-px{
+      #{$property}: $px-values;
+  }
+
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+      #{$property}: $px-values / $baseline-rem;
+  }
+  @else {
+      // Create an empty list that we can dump values into
+      $rem-values: ();
+      @each $value in $px-values {
+          // If the value is zero or not a number, return it
+          @if $value == 0 or type-of( $value ) != "number" {
+              $rem-values: append($rem-values, $value);
+          }
+          @else {
+              $rem-values: append($rem-values, $value / $baseline-rem);
+          }
+      }
+
+      // Return the property and its list of converted values
+      #{$property}: $rem-values;
+  }
+}
+
+@mixin rem-font($font-size-px, $line-height-px:false){
+  @include rem('font-size', $font-size-px);
+  @if $line-height-px{
+      @include rem('line-height', $line-height-px);
+  }
+}
+
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+-ms-border-radius: $radius;
+-o-border-radius: $radius;
+border-radius: $radius;
+}
+@mixin border-radius-top-left($radius) {
+-webkit-border-top-left-radius: $radius;
+-moz-border-radius-topleft: $radius;
+-ms-border-top-left-radius: $radius;
+-o-border-top-left-radius: $radius;
+border-top-left-radius: $radius;
+}
+@mixin border-radius-top-right($radius) {
+-webkit-border-top-right-radius: $radius;
+-moz-border-radius-topright: $radius;
+-ms-border-top-right-radius: $radius;
+-o-border-top-right-radius: $radius;
+border-top-right-radius: $radius;
+}
+@mixin border-radius-bottom-left($radius) {
+-webkit-border-bottom-left-radius: $radius;
+-moz-border-radius-bottomleft: $radius;
+-ms-border-bottom-left-radius: $radius;
+-o-border-bottom-left-radius: $radius;
+border-bottom-left-radius: $radius;
+}
+@mixin border-radius-bottom-right($radius) {
+-webkit-border-bottom-right-radius: $radius;
+-moz-border-radius-bottomright: $radius;
+-ms-border-bottom-right-radius: $radius;
+-o-border-bottom-right-radius: $radius;
+border-bottom-right-radius: $radius;
+}
+
+
+@mixin filter-grayscale($value){
+-webkit-filter: grayscale($value);
+-moz-filter: grayscale($value);
+-ms-filter: grayscale($value);
+-o-filter: grayscale($value);
+filter: grayscale($value);
+}
+
+@mixin opacity($opacity) {
+zoom: 1;
+filter: alpha(opacity=($opacity*100));
+opacity: $opacity;
+}
+
+@mixin non-selectable() {
+-webkit-user-select: none;  
+-moz-user-select: none;    
+-ms-user-select: none;      
+user-select: none;
+}
+
+@mixin ellipsis() {
+white-space: nowrap;
+overflow: hidden;
+-ms-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+text-overflow: ellipsis;
+}
+
+@mixin hide-text{
+  overflow:hidden;
+  text-indent:-9999px;
+  display:block;
+}
+
+@mixin inline-block($suffix:""){
+  display: inline-block #{$suffix};
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline #{$suffix};
+  *vertical-align: auto;
+}
+
+@mixin clearfix{
+  zoom:1;
+
+&:before,
+&:after{
+  content:"";
+    display:table;
+}
+&:after{
+  clear:both;
+}
+}
+
+@mixin border-box{
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+@mixin box-shadow($params) {
+-webkit-box-shadow: $params;
+-moz-box-shadow: $params;
+box-shadow: $params;
+}
+ 
+@mixin text-shadow($params) {
+text-shadow: $params;
+}
+
+ 
+@mixin transition($transition) {
+-webkit-transition: $transition;
+-moz-transition: $transition;
+-o-transition: $transition;
+transition: $transition;
+}
+
+
+ /*flex cross browser mixin*/
+@mixin flexbox {
+display: -webkit-box;
+display: -moz-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+}
+@mixin justify-content($value: flex-start) {
+@if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+} @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+} @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+} @else if $value == space-around {
+    -ms-flex-pack: distribute;
+} @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+}
+-webkit-justify-content: $value;
+justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+@if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+} @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+} @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+}
+-webkit-align-items: $value;
+align-items: $value;
+}
+@mixin flex-direction($value: row) {
+@if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+} @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+} @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+} @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+}
+-webkit-flex-direction: $value;
+-ms-flex-direction: $value;
+flex-direction: $value;
+}
+@mixin flex-wrap($value: nowrap) {
+// No Webkit/FF Box fallback.
+-webkit-flex-wrap: $value;
+@if $value == nowrap {
+    -ms-flex-wrap: none;
+} @else {
+    -ms-flex-wrap: $value;
+}
+flex-wrap: $value;
+}
+
+@mixin flex($fg: 1, $fs: 0, $fb: auto) {
+// Set a variable to be used by box-flex properties
+$fg-boxflex: $fg;
+
+// Box-Flex only supports a flex-grow value so lets grab the
+// first item in the list and just return that.
+@if type-of($fg) == "list" {
+    $fg-boxflex: nth($fg, 1);
+}
+
+-webkit-box: $fg-boxflex;
+-moz-box: $fg-boxflex;
+-webkit-flex: $fg $fs $fb;
+-ms-flex: $fg $fs $fb;
+flex: $fg $fs $fb;
+}
+/*mixin end here*/
+
+// custom scroll bar mixin
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  0%)) {
+// For Google Chrome
+
+overflow:auto;
+
+&::-webkit-scrollbar {
+  width:  $size;
+  height: $size;
+}
+
+&::-webkit-scrollbar-thumb {
+  background:transparent;
+}
+
+&:hover::-webkit-scrollbar-thumb {
+  background: $foreground-color;
+}
+
+
+&::-webkit-scrollbar-track {
+  background:transparent;
+}
+&:hover::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+// For Internet Explorer
+& {
+  
+  scrollbar-color: transparent transparent !important;
+  scrollbar-width: thin !important;
+}
+
+&:hover {
+  scrollbar-color: $foreground-color  $background-color !important;
+  scrollbar-width: thin !important;
+}
+}
+
+@mixin close-icon{
+svg {  
+  .center{
+    opacity: 0;
+    transform: scale(0);
+  }
+  .top {
+    transform: rotate(45deg);
+  }
+  .bottom {
+    transform: rotate(-45deg);
+  }
+} 
+}
+
+@mixin theme() {
+@each $theme, $map in $themes {
+  $theme-map: $map !global;
+  .#{$theme} & {
+    @content;
+  }
+  transition: 0.3s;
+}
+$theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,61 @@
+.filter-modal {
+  .modal-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid var(--primaryColor);
+
+    .modal-header {
+      padding: 18px 0 0 0;
+      margin-left: 16px;
+      border-bottom: 1px solid var(--primaryColor);
+
+      .modal-title {
+        color: var(--primaryColor);
+      }
+    }
+
+    .modal-body {
+      .completed-container,
+      .boxed-container,
+      .baked-container,
+      .cakeAssembled-container {
+        .form-group {
+          display: flex;
+
+          .custom-input-box {
+            &.checkbox-24 {
+              .form-check-input {
+                & + label {
+                  border: 1px solid var(--primaryColor);
+                  opacity: 1;
+                  &::before {
+                    border: 1px solid var(--primaryColor);
+                    border-right: 0;
+                    border-top: 0;
+                  }
+                }
+              }
+            }
+          }
+
+          .form-label {
+            margin-left: 0.5rem;
+            color: var(--primaryColor);
+            font-size: 18px;
+          }
+        }
+
+        border-bottom: 1px solid var(--primaryColor);
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .modal-footer {
+      border: none;
+
+      .btn-primary {
+        padding: 5px 20px;
+      }
+    }
+  }
+}

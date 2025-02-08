@@ -1,0 +1,23 @@
+header {
+  min-height: 40px;
+}
+
+.right-button {
+  padding: 0;
+  gap: 10px;
+  align-items: center;
+
+  &:focus,
+  &:active {
+    border: 0;
+    box-shadow: none !important;
+  }
+
+  .btn-text {
+    font-size: 18px;
+
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
+}

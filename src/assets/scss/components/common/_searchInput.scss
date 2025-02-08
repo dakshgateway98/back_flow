@@ -1,0 +1,10 @@
+.search-input-container {
+  .search-input-label {
+    color: var(--primaryColor) !important;
+  }
+  .search-input {
+    all: unset;
+    border-bottom: 1px solid var(--primaryColor) !important;
+    margin-bottom: 5px;
+  }
+}

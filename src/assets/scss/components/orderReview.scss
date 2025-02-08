@@ -1,0 +1,128 @@
+.order-review {
+  & > table {
+    &:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+  }
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .total {
+      font-size: 16px;
+      color: #5f6368;
+      margin: 5px;
+      font-weight: 500;
+    }
+  }
+  .review-title {
+    font-size: 12px;
+    color: #5f6368;
+    margin: 5px;
+    font-weight: 400;
+  }
+  .review-value {
+    font-size: 16px;
+    color: #5f6368;
+    font-weight: 400;
+  }
+
+  .table-bordered {
+    thead {
+      .btn {
+        &.clear {
+          background-color: var(--darkGreyColor) !important;
+        }
+      }
+
+      .paid {
+        color: var(--successColor) !important;
+      }
+
+      .reset-button {
+        height: 100px;
+      }
+
+      .checked-status {
+        &.complete {
+          background-color: var(--successColor);
+        }
+        &.not-complete {
+          background-color: var(--dangerColor);
+        }
+
+        &.modified {
+          background-color: var(--orangeColor);
+        }
+
+        &:disabled {
+          pointer-events: all !important;
+          cursor: not-allowed;
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    tbody {
+      .category {
+        font-size: 12px;
+        color: #b3b3b3;
+      }
+      .item {
+        margin-left: 20px;
+        max-width: 850px;
+
+        .item-shape {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid;
+
+          &.sheet {
+            height: 30px;
+            width: 100px;
+          }
+
+          &.round {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+          }
+
+          &.square {
+            width: 50px;
+            height: 50px;
+          }
+
+          &.stacked {
+            width: 50px;
+            height: 65px;
+          }
+        }
+
+        .item-title {
+          color: var(--primaryColor);
+        }
+
+        .custom-item-title-1 {
+          background-color: var(--primaryTextColor);
+          color: #ffffff;
+          border-radius: 3px;
+          padding: 5px;
+        }
+        .custom-item-title-2 {
+          background-color: var(--primaryColor);
+          color: #ffffff;
+          padding: 5px;
+          border-radius: 3px;
+        }
+
+        .cake-description {
+          font-size: 14px;
+          min-width: 120px;
+        }
+      }
+    }
+  }
+}

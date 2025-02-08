@@ -1,0 +1,55 @@
+.calc {
+  width: 350px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.calc_col {
+  padding: 2px;
+}
+.calc_btn {
+  background-color: var(--whiteColor);
+  padding: 15px;
+  width: 100%;
+  border: none;
+  &.custom {
+    background-color: var(--lightgrayColor);
+    &:hover {
+      background-color: var(--mediumGrayColor);
+    }
+  }
+
+  &.add {
+    background-color: var(--successColor);
+    color: var(--whiteColor);
+    &:hover {
+      background-color: var(--darkGreenColor);
+    }
+  }
+  &.sub {
+    background-color: var(--dangerColor);
+    color: var(--whiteColor);
+    &:hover {
+      background-color: var(--darkRedColor);
+    }
+  }
+  &:hover {
+    background-color: var(--lightgrayColor);
+  }
+}
+
+.calc_label {
+  background-color: var(--whiteColor);
+  padding: 15px;
+  width: 100%;
+  border: none;
+}
+
+.flavour {
+  background-color: var(--secondaryHeaderColor) !important;
+  border: 1px solid var(--primaryColor) !important;
+}
+
+.calc_line {
+  background-color: var(--darkGreyColor);
+  padding: 0.2px;
+}
